@@ -5,44 +5,85 @@ public class RunAll {
     public static void main(String[] args) {
         // Start Intersection 1
         new Thread(() -> {
-            Intersection1.main(args);
+            try {
+                Intersection1.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
         // Start Controller 1
         new Thread(() -> {
-            Controller1.main(args);
+            try {
+                Controller1.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
         // Start Intersection 2
         new Thread(() -> {
-            Intersection2.main(args);
+            try {
+                Intersection2.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
         // Start Controller 2
         new Thread(() -> {
-            Controller2.main(args);
+            try {
+                Controller2.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
         // Start Bus Station
         new Thread(() -> {
-            BusStation.main(args);
+            try {
+                BusStation.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
         // Start Taxi Station
         new Thread(() -> {
-            TaxiStation.main(args);
+            try {
+                TaxiStation.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
         // Start Roundabout
         new Thread(() -> {
-            Roundabout.main(args);
+            try {
+                Roundabout.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
-        // Start Pedestrian
+        // Start Pedestrian Controller
         new Thread(() -> {
-            PedestrianController.main(args);
+            try {
+                PedestrianController.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
 
-        System.out.println("All components started.");
+        // Start Universal Input GUI
+        new Thread(() -> {
+            try {
+                UniversalInput.main(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        System.out.println("RunAll: All components and Universal Input GUI started.");
     }
 }
